@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🛒 Product Dashboard</h1>
+<button onclick="logout()">Logout</button>
+<div class="top-bar">
+  <input type="text" id="searchInput" placeholder="Search products...">
+  <button class="add-btn" onclick="openModal()">+ Add Product</button>
+</div>
+
+<div class="container" id="products"></div>
+
+<!-- MODAL -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <h3 id="modalTitle">Add Product</h3>
+
+    <input type="hidden" id="productId">
+
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="description" placeholder="Description">
+    <input type="text" id="brand" placeholder="Brand">
+    <input type="number" id="price" placeholder="Price">
+    <input type="text" id="category" placeholder="Category">
+    <input type="number" id="quantity" placeholder="Quantity">
+
+    <label>Available</label>
+    <input type="checkbox" id="available">
+
+    <input type="file" id="imageFile">
+
+    <div class="modal-buttons">
+      <button onclick="saveProduct()">Save</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

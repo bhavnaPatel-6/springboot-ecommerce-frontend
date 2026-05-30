@@ -1,0 +1,70 @@
+   h1{
+            color:blue;
+            background-color: antiquewhite;
+            text-align: center;
+            border-radius: 34%;
+            text-shadow: thistle;
+
+        }
+        body{
+            background-color: rgb(220, 157, 80);
+        }
+        button{
+     background-color: teal;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+        
+        }
+        button:hover {
+    background-color: darkcyan;
+}
+        #inputbox{
+             background-color: antiquewhite;
+            padding: 10px;
+            width: 300px;
+            height: 40px;
+            margin: 2;
+               font-size: 18px;  
+            box-sizing: content-box;
+        
+            border: 4px solid gray;
+
+        }
+       #take{
+            background-color: antiquewhite;
+            padding: 10px;
+            width: 300px;
+            height: 40px;
+            margin: 2;
+               font-size: 18px;  
+            box-sizing: content-box;
+        
+            border: 4px solid rgb(52, 8, 78);
+
+        }
+        li {
+    list-style: none;
+    background: white;
+    margin: 10px auto;
+    padding: 10px;
+    width: 300px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+    width: 250px;
+    height: 35px;
+    margin: 20px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+    padding: 8px;
+}
