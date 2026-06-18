@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout</title>
+
+    <link rel="stylesheet"
+          href="checkout.css">
+
+</head>
+
+<body>
+
+<div class="checkout-container">
+
+    <h1>Checkout</h1>
+
+    <form id="checkoutForm">
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Full Name"
+            required>
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            required>
+
+        <textarea
+            id="address"
+            placeholder="Address"
+            required>
+        </textarea>
+
+        <input
+            type="text"
+            id="city"
+            placeholder="City"
+            required>
+
+        <input
+            type="text"
+            id="state"
+            placeholder="State"
+            required>
+
+        <input
+            type="text"
+            id="pincode"
+            placeholder="Pincode"
+            required>
+
+        <select
+            id="paymentMethod"
+            required>
+
+            <option value="">
+                Select Payment Method
+            </option>
+
+            <option value="COD">
+                Cash On Delivery
+            </option>
+
+        </select>
+
+        <button type="submit">
+
+            Place Order
+
+        </button>
+
+    </form>
+
+</div>
+
+<script src="config.js"></script>
+
+<script src="checkout.js"></script>
+
+</body>
+
+</html>

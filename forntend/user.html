@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProductHub Store</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            🛒 ProductHub
+        </div>
+
+        <div class="nav-right">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Products...">
+
+            <button
+                class="logout-btn"
+                onclick="logout()">
+                Logout
+            </button>
+           
+<button
+
+class="nav-cart-btn"
+
+onclick="window.location.href='cart.html'">
+
+🛒 Cart
+
+</button>
+
+<button
+
+class="orders-btn"
+
+onclick="window.location.href='orders.html'">
+
+📦 My Orders
+
+</button>
+
+        </div>
+
+    </header>
+
+    <section class="hero">
+
+        <h1>Welcome to ProductHub</h1>
+
+        <p>
+            Discover quality products at the best prices.
+        </p>
+
+    </section>
+
+    <section class="products-section">
+
+        <h2 class="section-title">
+            Available Products
+        </h2>
+
+        <div
+            class="container"
+            id="products">
+
+        </div>
+
+        <div class="modal" id="detailsModal">
+
+    <div class="details-box">
+
+        <span class="close-btn"
+              onclick="closeDetails()">
+            &times;
+        </span>
+
+        <img id="detailImage"
+             src=""
+             alt="Product">
+
+        <h2 id="detailName"></h2>
+
+        <p id="detailBrand"></p>
+
+        <p id="detailDescription"></p>
+
+        <p id="detailPrice"></p>
+
+        <p id="detailQuantity"></p>
+
+        <p id="detailAvailability"></p>
+
+    </div>
+
+</div>
+    </section>
+
+
+</button>
+   <script src="config.js"></script>
+
+<script src="user.js"></script>
+
+</body>
+
+
+</html>

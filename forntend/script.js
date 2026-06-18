@@ -1,11 +1,18 @@
+
+
+const API_URL = "http://localhost:8080";
+
 const token = localStorage.getItem("token");
+const role = localStorage.getItem("role");
+
 
 if (!token) {
   window.location.href = "login.html";
 }
 
-const GET_API = "http://localhost:8080/api/products";
-const BASE_API = "http://localhost:8080/api/product";
+const GET_API = `${API_URL}/api/products`;
+
+const BASE_API = `${API_URL}/api/product`;
 
 let allProducts = [];
 
@@ -39,7 +46,7 @@ function loadProducts() {
     alert("Products Not Loading");
 
   });
-}
+}  
 
 // DISPLAY PRODUCTS
 function displayProducts(products) {
@@ -53,10 +60,10 @@ function displayProducts(products) {
     const card = document.createElement("div");
 
     card.className = "card";
-
+card.onclick = () => showDetails(p);
     card.innerHTML = `
     
-      <img src="${p.imageUrl ? 'http://localhost:8080/uploads/' + p.imageUrl : 'https://via.placeholder.com/300'}">
+     <img src="${p.imageUrl ? API_URL + '/uploads/' + p.imageUrl : 'https://via.placeholder.com/300'}">
 
       <h3>${p.name}</h3>
 
@@ -163,7 +170,7 @@ function saveProduct() {
 
     formData.append("file", file);
 
-    fetch("http://localhost:8080/api/product/upload", {
+fetch(`${API_URL}/api/product/upload`, {
 
       method: "POST",
 
@@ -257,6 +264,67 @@ function sendProductData(imageName) {
     });
 }
 
+function showDetails(product){
+
+    document.getElementById(
+        "detailImage"
+    ).src =
+    product.imageUrl
+    ?
+  API_URL + "/uploads/" +
+product.imageUrl
+    :
+    "https://via.placeholder.com/300";
+
+    document.getElementById(
+        "detailName"
+    ).innerText =
+    product.name;
+
+    document.getElementById(
+        "detailBrand"
+    ).innerText =
+    "Brand: " + product.brand;
+
+    document.getElementById(
+        "detailDescription"
+    ).innerText =
+    product.description;
+
+    document.getElementById(
+        "detailPrice"
+    ).innerText =
+    "₹ " + product.price;
+
+    document.getElementById(
+        "detailCategory"
+    ).innerText =
+    "Category: " + product.category;
+
+    document.getElementById(
+        "detailQuantity"
+    ).innerText =
+    "Stock: " + product.quantity;
+
+    document.getElementById(
+        "detailAvailability"
+    ).innerText =
+    product.available
+    ?
+    "In Stock"
+    :
+    "Out of Stock";
+
+    document.getElementById(
+        "detailsModal"
+    ).style.display="flex";
+}
+
+function closeDetails(){
+    document.getElementById(
+        "detailsModal"
+    ).style.display="none";
+}
 // DELETE PRODUCT
 function deleteProduct(id) {
 
@@ -273,6 +341,7 @@ function deleteProduct(id) {
     .then(() => loadProducts());
 }
 
+
 // LOGOUT
 function logout() {
 
@@ -280,6 +349,7 @@ function logout() {
 
   window.location.href = "login.html";
 }
+
 
 // INIT
 loadProducts();

@@ -1,4 +1,4 @@
-async function loginUser(){
+async function loginUser() {
 
     const username =
         document.getElementById("loginUsername").value;
@@ -6,33 +6,41 @@ async function loginUser(){
     const password =
         document.getElementById("loginPassword").value;
 
-    const response = await fetch(
-        "http://localhost:8080/api/auth/login",
+    const response = await fetch(`${API_URL}/api/auth/login`,
         {
-            method:"POST",
+            method: "POST",
 
-            headers:{
-                "Content-Type":"application/json"
+            headers: {
+                "Content-Type": "application/json"
             },
 
-            body:JSON.stringify({
+            body: JSON.stringify({
                 username,
                 password
             })
         }
     );
 
-    if(response.ok){
+    if (response.ok) {
 
-        const token = await response.text();
+        const data = await response.json();
 
-        localStorage.setItem("token", token);
+        localStorage.setItem(
+            "token",
+            data.token
+        );
+
+        localStorage.setItem(
+            "role",
+            data.role
+        );
 
         alert("Login Success");
 
-        window.location.href = "index.html";
+        window.location.href = "user.html";
 
-    }else{
+    } else {
+
         alert("Invalid Credentials");
     }
 }
@@ -45,7 +53,7 @@ async function registerUser(){
         document.getElementById("registerPassword").value;
 
     const response = await fetch(
-        "http://localhost:8080/api/auth/register",
+       `${API_URL}/api/auth/register`,
         {
             method:"POST",
 
