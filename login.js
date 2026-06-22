@@ -70,6 +70,7 @@ async function registerUser(){
 
     if(response.ok){
         alert("Registration Successful");
+        window.location.href = "user.html";
     }else{
         alert("Registration Failed");
     }
