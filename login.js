@@ -29,6 +29,7 @@ async function loginUser() {
             "token",
             data.token
         );
+  localStorage.getItem("token")
 
         localStorage.setItem(
             "role",
