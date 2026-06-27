@@ -1,8 +1,4 @@
-
-
 const token = localStorage.getItem("token");
-
-
 const role = localStorage.getItem("role");
 
 if (!token) {
@@ -188,8 +184,7 @@ alert("Error");
 function logout() {
 
     localStorage.removeItem(
-        "token"
-    );
+        "token" );
 
     localStorage.removeItem(
         "role"
@@ -198,6 +193,7 @@ function logout() {
     window.location.href =
         "login.html";
 }
+
 //BUY NOW FUNCTION CALLED API OF BACKEND
 async function buyNow(productId){
 
@@ -245,7 +241,7 @@ document.getElementById(
 }
 function showDetails(product){
 
-  document.getElementById("detailImage").src =
+document.getElementById("detailImage").src =
 product.imageUrl
 ? `${API_URL}/uploads/${product.imageUrl}`
 
